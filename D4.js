@@ -99,7 +99,7 @@ function upperFirst(str) {
     let indexPrec = newString[i - 1];
     let index = newString[i];
     if (indexPrec === " ") {
-      newString = index.toUpperCase();
+      index.toUpperCase();
     }
   }
   return str.toString();
@@ -115,9 +115,9 @@ console.log(upperFirst("Ciao a tutti"));
 function cutString(str) {
   let newString = str.split("");
   const cut1 = newString.shift();
-  console.log(newString);
+  //   console.log(newString);
   const cut2 = newString.pop();
-  console.log(newString);
+  //   console.log(newString);
   return newString.join("");
 }
 
@@ -128,16 +128,13 @@ console.log(cutString("Ciao a tutti sono Andrea"));
 */
 
 function giveMeRandom(n) {
-  const random = Math.floor(Math.random() * 11);
   let newArr = [];
-  //   newArr = newArr.push(random);
-  for (n; n < newArr.length; n++) {
-    let index = newArr[n];
-    newArr = newArr.push(random);
-    console.log(index2);
+  let random;
+  for (i = 0; i < n; i++) {
+    random = Math.floor(Math.random() * 11);
+    newArr.push(random);
   }
-
   return newArr;
 }
 
-console.log(giveMeRandom(5));
+console.log(giveMeRandom(10));
