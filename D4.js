@@ -41,6 +41,11 @@ console.log(crazyDiff(7));
  se n è uguale a 400.
 */
 
+/*
+const boundary = (n) => {
+  (n >= 20 && n <= 100) || n === 400 ? "true" : "false";
+}; // altro metodo per racchiudere tutto in un'unica riga
+*/
 function boundary(n) {
   if (n >= 20 && n <= 100) return true;
   else if (n === 400) return true;
@@ -81,7 +86,7 @@ console.log(check3and7(22));
 
 function reverseString(str) {
   const newString = str.split("");
-  console.log(newString);
+  //   console.log(newString);
   str = newString.reverse();
   return str.join("");
 }
@@ -94,15 +99,15 @@ console.log(reverseString("EPICODE"));
 */
 
 function upperFirst(str) {
-  let newString = str.split("");
+  let newString = str.split(" ");
+  console.log(newString);
   for (i = 0; i < newString.length; i++) {
-    let indexPrec = newString[i - 1];
-    let index = newString[i];
-    if (indexPrec === " ") {
-      index.toUpperCase();
-    }
+    // let indexSucc = newString[i++];
+    newString[i] =
+      newString[i].charAt(0).toUpperCase() + newString[i].substring(1);
   }
-  return str.toString();
+  return newString.join(" ");
+  //   return newString.join(" ");
 }
 
 console.log(upperFirst("Ciao a tutti"));
